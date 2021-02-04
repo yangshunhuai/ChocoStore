@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # ChocoStore UI
+
+
 from PySimpleGUI import *
 import win32con
 import win32clipboard as clipbrd
@@ -21,6 +23,7 @@ layout = [[chocotest],
           [search_lbl, search_input, search_btn],
           [get_clipboard],
           [pkg_lbl, pkg, install_btn]]
+
 root = Window('ChocoStore', layout)
 
 while True:
@@ -28,17 +31,29 @@ while True:
     if event == 'testchoco':
         ver = os.popen('choco -v')
         Print('Chocolatey version: ' + ver.read())
+        pass
+
     if event == 'getpkgname':
         clipbrd.OpenClipboard()
         cmd = clipbrd.GetClipboardData(win32con.CF_UNICODETEXT)
         clipbrd.CloseClipboard()
+        global pkg
         pkg = cmd[14:]
         Print('Package name      : ' + pkg)
+        pass
+
     if event == 'search':
         keyword = values['keyword']
         search_url = choco_url + keyword.replace(' ', '+')
         wb.open(search_url)
+        pass
+
+    if event == 'install':
+        pass
+
     if event == WIN_CLOSED:
         break
+        pass
+
 
 root.Close()
