@@ -38,6 +38,7 @@ while True:
         cmd = clipbrd.GetClipboardData(win32con.CF_UNICODETEXT)
         clipbrd.CloseClipboard()
         pkg = cmd[14:]
+        global pkg
         Print('Package name      : ' + pkg)
         pass
 
