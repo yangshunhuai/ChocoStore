@@ -37,7 +37,6 @@ while True:
         clipbrd.OpenClipboard()
         cmd = clipbrd.GetClipboardData(win32con.CF_UNICODETEXT)
         clipbrd.CloseClipboard()
-        global pkg
         pkg = cmd[14:]
         Print('Package name      : ' + pkg)
         pass
@@ -49,6 +48,7 @@ while True:
         pass
 
     if event == 'install':
+    	os.system('choco install ' + pkg)
         pass
 
     if event == WIN_CLOSED:
