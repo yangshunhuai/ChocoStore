@@ -49,7 +49,6 @@ while True:
 
     if event == 'install':
     	os.system('choco install ' + pkg)
-        pass
 
     if event == WIN_CLOSED:
         break
