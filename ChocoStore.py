@@ -10,14 +10,14 @@ import webbrowser as wb
 
 choco_url = "https://chocolatey.org/packages?q="
 
-chocotest = Button('测试Chocolatey', key='testchoco')
-search_lbl = Text('搜索软件')
+chocotest = Button('Test Chocolatey', key='testchoco')
+search_lbl = Text('Search')
 search_input = InputText(key='keyword')
-search_btn = Button('搜索Chocolatey官网', key='search')
-get_clipboard = Button('读取剪贴板', key='getpkgname')
-pkg_lbl = Text('软件包名称')
+search_btn = Button('Search Chocolatey website', key='search')
+get_clipboard = Button('Get package name from clipboard', key='getpkgname')
+pkg_lbl = Text('Package name')
 pkg = InputText()
-install_btn = Button('安装', key='install')
+install_btn = Button('Install', key='install')
 
 layout = [[chocotest],
           [search_lbl, search_input, search_btn],
